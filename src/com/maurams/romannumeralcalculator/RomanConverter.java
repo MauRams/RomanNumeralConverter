@@ -57,7 +57,7 @@ public class RomanConverter {
     
     
     public static void main(String[] args) {
-        
+        try{
         //take input from the user and pass to an int - select which type of conversion is required
         int choice = Integer.parseInt(JOptionPane.showInputDialog("Press 1 for Roman Numeral Conversion\n"
                 + "Press 2 for Numerical Conversion"));
@@ -72,18 +72,25 @@ public class RomanConverter {
         else if(choice ==2){
             //Instantiate NumericalConverter Class in scope of if statement
             NumericalConverter myNumC = new NumericalConverter();
-            //pass String to variable 'in'
+        //pass String to variable 'in'
 		String in = JOptionPane.showInputDialog(null, "Enter Roman Numerals: ");
-        //pass 'in' to myNumC.toNumber
-		int b = myNumC.toNumber(in);
+        //make equal to inR and pass to uppercase    
+                String inR = in.toUpperCase();
+        //pass 'inR' to myNumC.toNumber
+		int b = myNumC.toNumber(inR);
         //show it to the user
-		JOptionPane.showMessageDialog(null, in + " in Numericals is " + b);
+		JOptionPane.showMessageDialog(null, in.toUpperCase() + " in Hindu-Arabic Numericals is " + b);
             }
-        else{
+        else {
                JOptionPane.showMessageDialog(null,"Invalid Choice");
             }
-        
+            
 	}
+        catch(NullPointerException e){
+            System.out.print(e);
+            }
+    }
+    
     
     
 }

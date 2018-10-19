@@ -33,10 +33,13 @@ public class NumericalConverter {
     public final static int toNumber(String num){
         //get the corresponding entry to each number
         String l = map.floorKey(num);
-        if(num == null ? l == null : num.equals(l)){
+        if(num.equals(l)){
             return map.get(num);
         }
         //recursive method calls itself with the value mapped each number
+        //incorrect mapping being carried out
+        //After debugging I have been unable to find root cause
+        
         return map.get(l) + toNumber(num.substring(1));
     }
      
