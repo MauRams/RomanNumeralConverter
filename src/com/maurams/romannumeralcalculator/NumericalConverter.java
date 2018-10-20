@@ -30,17 +30,18 @@ public class NumericalConverter {
     map.put("I", 1);
     
      }
-    public final static int toNumber(String num){
+    public final static int toNumber(String Str){
         //get the corresponding entry to each number
-        String l = map.floorKey(num);
-        if(num.equals(l)){
-            return map.get(num);
+        String rom = map.floorKey(Str);
+        if(Str.equals(rom)){
+            return map.get(Str);
         }
         //recursive method calls itself with the value mapped each number
         //incorrect mapping being carried out
         //After debugging I have been unable to find root cause
         
-        return map.get(l) + toNumber(num.substring(1));
+        return map.get(rom) + toNumber(Str.substring(1));
+        
     }
      
 
